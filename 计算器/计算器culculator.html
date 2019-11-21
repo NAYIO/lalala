@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>计算器嗷！</title>
+        <style>
+        .table1{
+            background: black;
+            width: 100vw;
+            height: 100vh;
+        }
+        .btn{
+            background-color:#7a7979;
+            border:none;
+            color: white;
+            text-align: center;
+            font-size: 10vh;
+            border-radius: 2vw;
+            padding: none;
+            margin: 1vw;
+            width:20vw;
+            height: 15vh;
+        }
+        .btnAC{
+            border-radius: 2vw;
+            font-size: 10vh;    
+            background-color: #7a7979;
+            color: orange;
+            border:none;
+            width: 42vw;
+            height: 15vh;
+            margin: 1vw;
+        }
+        .btnd{
+            border-radius: 2vw;
+            font-size: 10vh;
+            background-color: orange;
+            color: white;
+            border:none;
+            margin: 1vw;
+            width: 42vw;
+            height: 15vh;
+        }
+        .btnclear{
+            border-radius: 2vw;
+            font-size: 10vh;    
+            background-color: #7a7979;
+            color: orange;
+            border:none;
+            margin: 1vw;
+            width: 20vw;
+            height: 15vh;
+        }
+        .btn:active{
+            background-color: black;
+        }
+        .btnclear:active{
+            background-color: black;
+        }
+        .btnd:active{
+            background-color: black;
+        }
+        .btnAC:active{
+            background-color: black;
+        }
+        </style>
+        <script>
+            var num1=0,num2=0,result1,fuhao,num;
+            var first=1,judge=1; //judge用来判断是否是小数，first用来判断是操作数1还是2
+            function yunsuan(x)
+            {
+                var oDiv=document.getElementById('div0');
+                if(x=='<')
+                {
+                    oDiv.value=parseInt(Number(oDiv.value)/10);
+                }
+                if(x=='AC')
+                {
+                    oDiv.value=String(0);
+                }
+                if('0'<=x&&x<='9')
+                {
+                    if(judge==1)
+                    {oDiv.value=Number(x)+Number(oDiv.value)*10;}
+                    else
+                    {oDiv.value=Number(x)/10+Number(oDiv.value);judge=1;}
+                }
+                if(x=='.')
+                {
+                    judge=0;
+                    oDiv.value=oDiv.value+'.';
+                }
+                if(x=='+'||x=='-'||x=='*'||x=='/')
+                {
+                    if(first==1)
+                    {
+                        num1=Number(oDiv.value);
+                        first=0;
+                        oDiv.value=0;
+                        fuhao=x;
+                    } 
+                    else
+                    {
+                        num2=Number(oDiv.value);
+                        switch (fuhao)
+                        {
+                            case '+' :result1=num1+num2;break;
+                            case '-' :result1=num1-num2;break;
+                            case '/' :
+                                if(num2==0)
+                                {alert("除数不能为0！");result1=0;}
+                                else
+                                {result1=num1/num2;break;}
+                            case '*' :result1=num1*num2;break;
+                        }   
+                        fuhao=x;
+                        num1=result1;
+                        oDiv.value=0;
+                    }               
+                }
+                if(x=='=')
+                {
+                    num2=Number(oDiv.value);
+                    switch (fuhao)
+                        {
+                            case '+' :result1=num1+num2;break;
+                            case '-' :result1=num1-num2;break;
+                            case '/' :
+                                if(num2==0)
+                                {alert("除数不能为0！");result1=0;}
+                                else
+                                {result1=num1/num2;break;}
+                            case '*' :result1=num1*num2;break;
+                        }   
+                    oDiv.value=result1;
+                    first=1;
+                }
+            }
+        </script>
+    </head>
+    <body>
+        <table class="table1" >
+                    <th colspan="4"><input type="text" value='0' id='div0' class="table2" 
+                style="width: 100vw;height: 22vh;color:black;font-size:10vw ;"/><br/></th>
+            <tr>
+                <th colspan="2"><input type="button" value="AC" id='AC' class="btnAC" onclick=yunsuan(value)></th>
+                <th><input type="button" value="<" id='<' class="btnclear" onclick=yunsuan(value)></th>
+                <th><input type="button" value="+" id='+' class="btn" onclick=yunsuan(value)></th>
+            </tr>
+            <tr>
+                <th><input type="button" value="7" id='7' class="btn" onclick=yunsuan(value)></th>
+                <th><input type="button" value="8" id='8' class="btn" onclick=yunsuan(value)></th>
+                <th><input type="button" value="9" id='9' class="btn" onclick=yunsuan(value)></th>
+                <th><input type="button" value="-" id='-' class="btn" onclick=yunsuan(value)></th>
+            </tr>
+            <tr>
+                <th><input type="button" value="4" id='4' class="btn" onclick=yunsuan(value)></th>
+                <th><input type="button" value="5" id='5' class="btn" onclick=yunsuan(value)></th>
+                <th><input type="button" value="6" id='6' class="btn" onclick=yunsuan(value)></th>
+                <th><input type="button" value="*" id='*' class="btn" onclick=yunsuan(value)></th>
+            </tr>
+            <tr>
+                <th><input type="button" value="1" id='1' class="btn" onclick=yunsuan(value)></th>
+                <th><input type="button" value="2" id='2' class="btn" onclick=yunsuan(value)></th>
+                <th><input type="button" value="3" id='3' class="btn" onclick=yunsuan(value)></th>
+                <th><input type="button" value="/" id='/' class="btn" onclick=yunsuan(value)></th>
+
+            </tr>
+                <th><input type="button" value="." id='.' class="btn" onclick=yunsuan(value)></th>
+                <th><input type="button" value="0" id='0' class="btn" onclick=yunsuan(value)></th>
+                <th colspan="2"><input type="button" value="=" id='=' class="btnd" onclick=yunsuan(value)></th>
+            </tr>
+    </table>
+    </body>
+</html>
