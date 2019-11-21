@@ -1,0 +1,93 @@
+#all{
+    height: 100vh;
+    width: 100vw;
+    position: relative;
+}
+.box{
+    position: absolute;
+    height: 30vh;
+    width: 15vw;
+    margin: none;
+    padding: none;
+    transition: tranform 1s;
+    border: 0.3vw solid wheat;
+}
+img{
+    width: 100%;
+    height: 100%;
+    cursor: move;
+    
+}
+.scale{
+    width: 5vw;
+    height: 5vh;
+    background-color:transparent;
+    overflow: hidden;
+    margin: none;
+    padding: none;
+    border: none;
+    cursor: se-resize;
+    position: absolute;
+    right: 0;
+    bottom: 0;
+}
+.fileBox{
+    display: inline-block;
+    position: absolute;
+    left: 0.5vw;
+    top: 0.5vh;
+    width: 8vw;
+    height: 6vh;
+    background-color: rgb(233, 185, 126);
+    overflow: hidden;
+    text-align: center;
+    text-decoration: none;
+    color: aliceblue;
+    font-size: 1.5vw;
+    cursor: pointer;
+    border-radius: 10%;
+    box-shadow: 0.1vw 0.1vh 0.5vw rgb(170, 169, 166);
+    line-height: 6vh;
+}
+#add{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    left: 0.5vw;
+    top: 0.5vh;
+    background-color: transparent;
+    opacity: 0;
+    font-size: 1vw;
+    filter: alpha(opacity=0);
+}
+.delea{
+    width: 8vw;
+    height: 6vh;
+    position: absolute;
+    left: 0.5vw;
+    top: 8vh;
+    background-color: rgb(233, 185, 126);
+    color: white;
+    text-align: center;
+    font-size: 1.5vw;
+    border-radius: 10%;
+    box-shadow: 0.1vw 0.1vh 0.5vw rgb(170, 169, 166);
+    line-height: 6vh;
+}
+.select{
+    width: 8vw;
+    height: 6vh;
+    position: absolute;
+    left: 0.5vw;
+    top: 16vh;
+    background-color: rgb(233, 185, 126);
+    color: white;
+    text-align: center;
+    font-size: 1.5vw;
+    border-radius: 10%;
+    box-shadow: 0.1vw 0.1vh 0.5vw rgb(170, 169, 166);
+    line-height: 6vh;
+}
+.choose{
+    border:0.2vw solid rgb(236, 167, 63);
+}

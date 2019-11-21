@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <script src="http://libs.baidu.com/jquery/1.9.1/jquery.js"></script>
+        <link type="text/css" href="css/ph.css" rel="stylesheet">
+        <title>这是一个炫酷的照片墙哦</title>
+    </head>
+    <body>
+        <div id="all">
+            <div id="images">
+                <div class="box" id="box1">
+                    <img class="ph" id="1" src="images/ph1.png"/>
+                    <div class="scale"></div>
+                </div>
+                <div class="box" id="box2">
+                    <img class="ph" id="2" src="images/ph2.png"/>
+                    <div class="scale"></div>
+                </div>
+                <div class="box" id="box3">
+                    <img class="ph" id="3" src="images/ph3.png"/>
+                    <div class="scale"></div>
+                </div>
+                <div class="box" id="box4">
+                    <img class="ph" id="4" src="images/ph4.png"/>
+                    <div class="scale"></div>
+                </div>
+                <div class="box" id="box5">
+                    <img class="ph" id="5" src="images/ph5.png"/>
+                    <div class="scale"></div>
+                </div>
+                <div class="box" id="box6">
+                    <img class="ph" id="6" src="images/ph6.png"/>
+                    <div class="scale"></div>
+                </div>
+            </div>
+        </div>
+        <div class="fileBox"> 
+            添加图片
+            <input type="file" onchange="addImg(this)" id="add"/>
+        </div>
+        <div class="delete">
+            <div class="delea" onclick="delePh()">删除图片</div>
+        </div>
+        <div class="selector">
+            <div class="select" onclick="selector()">选择图片</div>
+        </div>
+    </body>
+    <script type="text/javascript" src="main.js"></script>
+</html>
